@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denise Helena | Corretora de Imóveis</title>
+    <meta name="description" content="Denise Helena Corretora de Imóveis - Especialista em compra e locação de imóveis com excelência e confiança">
+    <meta name="keywords" content="corretora de imóveis, imóveis de luxo, compra de imóveis, locação de imóveis, Denise Helena">
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Reset e Estilos Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --azul-marinho: #0F1A3D;
+            --prata-fosco: #C0C0C0;
+            --branco-alpino: #EAEAEA;
+            --ambar: #FFBF00;
+            --cinza-ardosia: #708090;
+            --sombra-padrao: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --transicao: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--branco-alpino);
+            color: var(--azul-marinho);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--ambar);
+            color: var(--azul-marinho);
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: var(--transicao);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--sombra-padrao);
+        }
+        
+        .btn:hover {
+            background-color: #E0A800;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--ambar);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--cinza-ardosia);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Cabeçalho e Navegação */
+        header {
+            background-color: var(--azul-marinho);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--sombra-padrao);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            color: var(--branco-alpino);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+        
+        .logo-text span {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--prata-fosco);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-top: -5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: var(--prata-fosco);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: var(--transicao);
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--branco-alpino);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--ambar);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transicao);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--branco-alpino);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Banner Hero */
+        .hero {
+            background: linear-gradient(rgba(15, 26, 61, 0.8), rgba(15, 26, 61, 0.9)), url('/api/placeholder/1920/1080') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--branco-alpino);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--prata-fosco);
+        }
+        
+        .hero .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--branco-alpino);
+            border: 2px solid var(--branco-alpino);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--branco-alpino);
+            color: var(--azul-marinho);
+        }
+        
+        /* Sobre */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            box-shadow: var(--sombra-padrao);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .about-image img {
+            transition: var(--transicao);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--azul-marinho);
+        }
+        
+        .about-text h3 {
+            color: var(--ambar);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--cinza-ardosia);
+        }
+        
+        .features {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            background-color: var(--azul-marinho);
+            color: var(--ambar);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        /* Serviços */
+        .services {
+            background-color: var(--branco-alpino);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra-padrao);
+            transition: var(--transicao);
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-icon {
+            background-color: var(--azul-marinho);
+            color: var(--ambar);
+            font-size: 2rem;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: -40px auto 20px;
+            position: relative;
+            z-index: 1;
+            box-shadow: var(--sombra-padrao);
+        }
+        
+        .service-content {
+            padding: 0 30px 30px;
+            text-align: center;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .service-content p {
+            color: var(--cinza-ardosia);
+            margin-bottom: 20px;
+        }
+        
+        /* Propriedades */
+        .properties {
+            background-color: white;
+        }
+        
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .property-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra-padrao);
+            transition: var(--transicao);
+            position: relative;
+        }
+        
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .property-card:hover .property-image img {
+            transform: scale(1.1);
+        }
+        
+        .property-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transicao);
+        }
+        
+        .property-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--ambar);
+            color: var(--azul-marinho);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 1;
+        }
+        
+        .property-content {
+            padding: 25px;
+        }
+        
+        .property-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .property-price {
+            color: var(--ambar);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .property-features {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            color: var(--cinza-ardosia);
+        }
+        
+        .property-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .property-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--cinza-ardosia);
+            font-size: 0.9rem;
+            margin: 15px 0;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(15, 26, 61, 0.9), rgba(15, 26, 61, 0.9)), url('/api/placeholder/1920/1080') center/cover no-repeat;
+            color: var(--branco-alpino);
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin: 0 auto 40px;
+            max-width: 700px;
+            color: var(--prata-fosco);
+        }
+        
+        /* Contato */
+        .contact {
+            background-color: var(--branco-alpino);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--azul-marinho);
+        }
+        
+        .contact-details {
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            background-color: var(--azul-marinho);
+            color: var(--ambar);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            margin-bottom: 5px;
+            color: var(--azul-marinho);
+        }
+        
+        .contact-text p {
+            color: var(--cinza-ardosia);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            background-color: var(--azul-marinho);
+            color: var(--branco-alpino);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transicao);
+        }
+        
+        .social-link:hover {
+            background-color: var(--ambar);
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--sombra-padrao);
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--azul-marinho);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: var(--transicao);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--azul-marinho);
+            box-shadow: 0 0 0 3px rgba(15, 26, 61, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--azul-marinho);
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: var(--azul-marinho);
+            color: var(--prata-fosco);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-logo {
+            color: var(--branco-alpino);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            display: block;
+            font-size: 1rem;
+            color: var(--prata-fosco);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-top: -5px;
+        }
+        
+        .footer-about p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h3 {
+            color: var(--branco-alpino);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--ambar);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links ul li a {
+            color: var(--prata-fosco);
+            text-decoration: none;
+            transition: var(--transicao);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--ambar);
+            padding-left: 5px;
+        }
+        
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .footer-contact li i {
+            color: var(--ambar);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(192, 192, 192, 0.1);
+        }
+        
+        /* Botão Voltar ao Topo */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--ambar);
+            color: var(--azul-marinho);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transicao);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--azul-marinho);
+            color: var(--ambar);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .properties-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                position: relative;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--azul-marinho);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                height: 0;
+                overflow: hidden;
+                transition: var(--transicao);
+                opacity: 0;
+                visibility: hidden;
+            }
+            
+            nav.active {
+                height: auto;
+                opacity: 1;
+                visibility: visible;
+                padding: 20px 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero .btn-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .service-card,
+            .property-card,
+            .contact-form {
+                margin: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-text">
+                        Denise Helena
+                        <span>CORRETORA DE IMÓVEIS</span>
+                    </div>
+                </div>
+                <button class="mobile-toggle" aria-label="Menu de navegação">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#imoveis">Imóveis</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Hero -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Realize o sonho da sua casa própria</h1>
+                <p>Oferecemos os melhores serviços em compra e locação de imóveis com profissionalismo e excelência.</p>
+                <div class="btn-group">
+                    <a href="#imoveis" class="btn">Ver Imóveis</a>
+                    <a href="#contato" class="btn btn-outline">Agende uma Visita</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Sobre a Denise Helena</h2>
+                    <h3>Corretora de Imóveis</h3>
+                    <p>Denise Helena Corretora de Imóveis oferece soluções completas para compra e locação de imóveis com profissionalismo e dedicação. Nossa missão é proporcionar a melhor experiência para nossos clientes, encontrando o imóvel perfeito para suas necessidades.</p>
+                    <p>Com amplo conhecimento do mercado imobiliário e um atendimento personalizado, garantimos transparência e segurança em todas as negociações.</p>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Excelência</h4>
+                                <p>Serviço de alta qualidade com foco total na satisfação do cliente.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Confiança</h4>
+                                <p>Transparência e ética em todas as negociações realizadas.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Personalização</h4>
+                                <p>Atendimento individualizado para cada cliente e necessidade.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Experiência</h4>
+                                <p>Conhecimento aprofundado do mercado imobiliário atual.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/600/400" alt="Denise Helena Corretora de Imóveis">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="services" id="servicos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Oferecemos soluções completas para todas as suas necessidades imobiliárias</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Compra de Imóveis</h3>
+                        <p>Auxiliamos na busca e aquisição do imóvel ideal para você e sua família, analisando cada detalhe para garantir um excelente negócio.</p>
+                        <a href="#contato" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Locação de Imóveis</h3>
+                        
